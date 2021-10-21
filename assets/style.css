@@ -49,3 +49,49 @@ h1 {
     line-height: 1;
     margin: 1rem 2rem;
 }
+
+@media screen and (max-width: 720px) {
+    .big-text {
+        font-size: 5rem;
+    }
+ }
+
+ @media screen and (max-width: 640px) {
+    .big-text {
+        font-size: 5rem;
+        margin: 1rem 1.2rem;
+    }
+ }
+
+ @media screen and (max-width: 540px) {
+    .big-text {
+        font-size: 4rem;
+    }
+ }
+
+ @media screen and (max-width: 480px) {
+     h1 {
+        font-size: 3.5rem;
+     }
+    .big-text {
+        font-size: 3rem;
+    }
+ }
+
+ @media screen and (max-width: 384px) {
+    h1 {
+       font-size: 2.5rem;
+    }
+   .big-text {
+       font-size: 2.2rem;
+   }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+       font-size: 2rem;
+    }
+   .big-text {
+       font-size: 1.5rem;
+   }
+}
