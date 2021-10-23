@@ -26,6 +26,13 @@ function formatTime(time) {
     return time < 10 ? `0${time}` : time;
 }
 
+function closePreloader() {
+    const preloader = document.querySelector('.preloder');
+    preloader.classList.add('disable')
+}
+
 countdown();
 
 setInterval(countdown, 1000);
+
+setTimeout(closePreloader, 3000);
