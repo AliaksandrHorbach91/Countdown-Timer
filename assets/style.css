@@ -76,7 +76,7 @@ h1 {
     background: #fff;
     opacity: 1;
     transition: opacity ease 0.5s;
-    z-index: 1;
+    z-index: 3;
 }
 
 .lds-roller {
@@ -167,7 +167,46 @@ h1 {
   .disable {
     opacity: 0;
     transition: opacity ease 1s;
+    z-index: 0;
   }
+
+  .btn-img {
+      position: absolute;
+      bottom: 5%;
+      right: 10%;
+      cursor: pointer;
+      z-index: 1;
+  }
+
+  .btn-img {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    width: 100px;
+	height: 40px;
+	display: inline-block;	
+	box-sizing: border-box;
+	outline: none;
+	border: 1px solid rgba(255, 255, 255, 0.8);  
+	border-radius: 6px;
+	box-shadow: 0 0 10px rgb(0 0 0 / 10%), inset 0 0 1px rgb(255 255 255 / 60%);
+    background: rgba(255, 255, 255, 0.8);
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+    z-index: 1;
+}
+.btn-img:focus-visible {
+	box-shadow: 0 0 0 2px #666;
+}
+.btn-img:hover {
+	background: rgba(255, 255, 255, 0.9);
+}
+.btn-img:active {
+	transform: scale(0.96);
+}
+
 
 
 @media screen and (max-width: 720px) {
