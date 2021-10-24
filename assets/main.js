@@ -2,6 +2,7 @@ const daysEl = document.querySelector("#days");
 const hoursEl = document.querySelector("#hours");
 const minsEl = document.querySelector("#mins");
 const secondsEl = document.querySelector("#seconds");
+const btnChancgeBg = document.querySelector('.btn-img')
 
 const newYears = `1 Jan ${(new Date).getFullYear() + 1}`;
 
@@ -30,6 +31,34 @@ function closePreloader() {
     const preloader = document.querySelector('.preloder');
     preloader.classList.add('disable')
 }
+
+function changeBg() {
+    
+}
+
+let countBg = 1;
+btnChancgeBg.addEventListener('click', () => {
+    const bgArr = [
+        './assets/img/0.jpg',
+        './assets/img/1.jpg', 
+        './assets/img/2.jpg',
+        './assets/img/3.jpg',
+        './assets/img/4.jpg',
+        './assets/img/5.jpg',
+        './assets/img/6.jpg',
+        './assets/img/7.jpg',
+        './assets/img/8.jpg',
+        './assets/img/9.jpg',
+        './assets/img/10.jpg'
+    ];
+    const body = document.querySelector('body');
+    body.style.backgroundImage=`url(${bgArr[countBg]})`;
+    countBg++;
+    if( countBg >= bgArr.length) {
+        countBg = 0;
+    }
+    console.log(countBg)
+})
 
 countdown();
 
