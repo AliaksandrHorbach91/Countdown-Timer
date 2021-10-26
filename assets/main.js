@@ -5,10 +5,10 @@ const secondsEl = document.querySelector("#seconds");
 const btnChancgeBg = document.querySelector('.btn-img')
 
 const newYears = `1 Jan ${(new Date).getFullYear() + 1}`;
+const currentDate = new Date();
 
 function countdown() {
     const newYearsDate = new Date(newYears);
-    const currentDate = new Date();
 
     const totalSeconds = (newYearsDate - currentDate) / 1000;
 
@@ -32,36 +32,54 @@ function closePreloader() {
     preloader.classList.add('disable')
 }
 
-function changeBg() {
-    
-}
+
 
 let countBg = 1;
-btnChancgeBg.addEventListener('click', () => {
-    const bgArr = [
-        './assets/img/0.jpg',
-        './assets/img/1.jpg', 
-        './assets/img/2.jpg',
-        './assets/img/3.jpg',
-        './assets/img/4.jpg',
-        './assets/img/5.jpg',
-        './assets/img/6.jpg',
-        './assets/img/7.jpg',
-        './assets/img/8.jpg',
-        './assets/img/9.jpg',
-        './assets/img/10.jpg'
-    ];
+function changeBg() {
     const body = document.querySelector('body');
-    body.style.backgroundImage=`url(${bgArr[countBg]})`;
-    countBg++;
-    if( countBg >= bgArr.length) {
+    const imgWay = './assets/img/'
+    let hrs = currentDate.getHours();
+
+    bgObj = {
+        morning:[`${imgWay}morning/0.jpg`, `${imgWay}morning/1.jpg`, `${imgWay}morning/2.jpg`,
+                `${imgWay}morning/3.jpg`,`${imgWay}morning/4.jpg`,`${imgWay}morning/5.jpg`],
+                
+        afternoon:[`${imgWay}afternoon/0.jpg`, `${imgWay}afternoon/1.jpg`, `${imgWay}afternoon/2.jpg`,
+                `${imgWay}afternoon/3.jpg`,`${imgWay}afternoon/4.jpg`,`${imgWay}afternoon/5.jpg`],
+
+        evening:[`${imgWay}evening/0.jpg`, `${imgWay}evening/1.jpg`, `${imgWay}evening/2.jpg`,
+                `${imgWay}evening/3.jpg`,`${imgWay}evening/4.jpg`,`${imgWay}evening/5.jpg`],
+                
+        night:[`${imgWay}night/0.jpg`, `${imgWay}night/1.jpg`, `${imgWay}night/2.jpg`,
+                `${imgWay}night/3.jpg`,`${imgWay}night/4.jpg`,`${imgWay}night/5.jpg`],
+    }
+
+    if( countBg >= 6) {
         countBg = 0;
     }
-    console.log(countBg)
-})
 
+    if (hrs >= 6 && hrs < 12) {
+        body.style.backgroundImage=`url(${bgObj.morning[countBg]})`;
+    }
+    if (hrs >= 12 && hrs < 18) {
+        body.style.backgroundImage=`url(${bgObj.afternoon[countBg]})`;
+    }
+    if (hrs >= 18 && hrs < 0) {
+        body.style.backgroundImage=`url(${bgObj.evening[countBg]})`;
+    }
+    if (hrs >= 0 && hrs < 6) {
+        body.style.backgroundImage=`url(${bgObj.night[countBg]})`;
+    }
+
+    countBg++;
+
+}
+
+btnChancgeBg.addEventListener('click', changeBg);
+
+changeBg();
 countdown();
-
 setInterval(countdown, 1000);
-
 setTimeout(closePreloader, 3000);
+
+
