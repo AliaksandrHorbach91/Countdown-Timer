@@ -2,7 +2,7 @@ const daysEl = document.querySelector("#days");
 const hoursEl = document.querySelector("#hours");
 const minsEl = document.querySelector("#mins");
 const secondsEl = document.querySelector("#seconds");
-const btnChancgeBg = document.querySelector('.btn-img')
+const btnChangeBg = document.querySelector('.btn-img')
 
 const newYears = `1 Jan ${(new Date).getFullYear() + 1}`;
 const currentDate = new Date();
@@ -75,7 +75,7 @@ function changeBg() {
 
 }
 
-btnChancgeBg.addEventListener('click', changeBg);
+btnChangeBg.addEventListener('click', changeBg);
 
 changeBg();
 countdown();
