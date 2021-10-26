@@ -34,7 +34,7 @@ function closePreloader() {
 
 
 
-let countBg = 1;
+let countBg = 0;
 function changeBg() {
     const body = document.querySelector('body');
     const imgWay = './assets/img/'
@@ -72,7 +72,6 @@ function changeBg() {
     }
 
     countBg++;
-
 }
 
 btnChangeBg.addEventListener('click', changeBg);
@@ -80,6 +79,7 @@ btnChangeBg.addEventListener('click', changeBg);
 changeBg();
 countdown();
 setInterval(countdown, 1000);
+setInterval(changeBg, 600000);
 setTimeout(closePreloader, 3000);
 
 
