@@ -83,3 +83,24 @@ setInterval(changeBg, 600000);
 setTimeout(closePreloader, 3000);
 
 
+
+
+
+fetch('http://api.openweathermap.org/data/2.5/weather?id=3081368&lang=en&appid=c43016557ce6a48d27caa09c7ba1557e')
+.then(function (resp) {return resp.json() })
+.then(function (data) {
+    console.log(data)
+    //добавляем название города
+    document.querySelector('.weather__title').textContent = `${data.name}`;
+    //data.main.temp содержит значение в Кельвинах, отнимаем от  273, чтобы получить значение в градусах Цельсия
+    document.querySelector('.weather__temp').innerHTML = Math.round(data.main.temp - 273) + '&deg;C';
+    document.querySelector('.weather__temp-max').innerHTML = Math.round(data.main.temp_max - 273) + '&deg;C';
+    document.querySelector('.weather__temp-min').innerHTML = Math.round(data.main.temp_min - 273) + '&deg;C';
+    //Добавляем описание погоды
+    document.querySelector('.weather__desc').textContent = data.weather[0]['description'];
+    //Добавляем иконку погоды
+    document.querySelector('.weather__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
+    })
+    .catch(function () {
+        //Обрабатываем ошибки
+    });
