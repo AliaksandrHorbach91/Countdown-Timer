@@ -1,255 +1,239 @@
-@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    font-family: 'Nova Mono', monospace;
-    background-size: cover;
-    background-position: center center;
-    transition: background ease 0.5s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: "Nova Mono", monospace;
+  background-size: cover;
+  background-position: center center;
+  transition: background ease 0.5s;
 }
 
 h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 .countdown-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .countdown-el {
-    position: relative;
-    text-align: center;
-    z-index: 1;
+  position: relative;
+  text-align: center;
+  z-index: 1;
 }
 
 .countdown-el::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 95%;
-    height: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.4);
-    content: '';
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+    inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.4);
+  content: "";
+  z-index: -1;
 }
-
 
 .countdown-el span {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .big-text {
-    font-weight: bold;
-    font-size: 6rem;
-    line-height: 1;
-    margin: 1rem 2rem;
+  font-weight: bold;
+  font-size: 6rem;
+  line-height: 1;
+  margin: 1rem 2rem;
 }
 
-.big-text {
-    font-weight: bold;
-    font-size: 6rem;
-    line-height: 1;
-    margin: 1rem 2rem;
-}
 
 /* ----------   Preloder  ---------- */
 .preloder {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    opacity: 1;
-    transition: opacity ease 0.5s;
-    z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  opacity: 1;
+  transition: opacity ease 0.5s;
+  z-index: 3;
 }
 
 .lds-roller {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
   }
-  .lds-roller div {
-    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    transform-origin: 40px 40px;
+  100% {
+    transform: rotate(360deg);
   }
-  .lds-roller div:after {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #000;
-    margin: -4px 0 0 -4px;
-  }
-  .lds-roller div:nth-child(1) {
-    animation-delay: -0.036s;
-  }
-  .lds-roller div:nth-child(1):after {
-    top: 63px;
-    left: 63px;
-  }
-  .lds-roller div:nth-child(2) {
-    animation-delay: -0.072s;
-  }
-  .lds-roller div:nth-child(2):after {
-    top: 68px;
-    left: 56px;
-  }
-  .lds-roller div:nth-child(3) {
-    animation-delay: -0.108s;
-  }
-  .lds-roller div:nth-child(3):after {
-    top: 71px;
-    left: 48px;
-  }
-  .lds-roller div:nth-child(4) {
-    animation-delay: -0.144s;
-  }
-  .lds-roller div:nth-child(4):after {
-    top: 72px;
-    left: 40px;
-  }
-  .lds-roller div:nth-child(5) {
-    animation-delay: -0.18s;
-  }
-  .lds-roller div:nth-child(5):after {
-    top: 71px;
-    left: 32px;
-  }
-  .lds-roller div:nth-child(6) {
-    animation-delay: -0.216s;
-  }
-  .lds-roller div:nth-child(6):after {
-    top: 68px;
-    left: 24px;
-  }
-  .lds-roller div:nth-child(7) {
-    animation-delay: -0.252s;
-  }
-  .lds-roller div:nth-child(7):after {
-    top: 63px;
-    left: 17px;
-  }
-  .lds-roller div:nth-child(8) {
-    animation-delay: -0.288s;
-  }
-  .lds-roller div:nth-child(8):after {
-    top: 56px;
-    left: 12px;
-  }
-  @keyframes lds-roller {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .disable {
-    opacity: 0;
-    transition: opacity ease 1s;
-    z-index: 0;
-  }
+}
 
-  .btn-img {
-      position: absolute;
-      bottom: 5%;
-      right: 10%;
-      cursor: pointer;
-      z-index: 1;
-  }
+.disable {
+  opacity: 0;
+  transition: opacity ease 1s;
+  z-index: 0;
+}
 
-  .btn-img {
-    position: absolute;
-    bottom: 5%;
-    right: 10%;
-    width: 100px;
-	height: 40px;
-	display: inline-block;	
-	box-sizing: border-box;
-	outline: none;
-	border: 1px solid rgba(255, 255, 255, 0.8);  
-	border-radius: 6px;
-	box-shadow: 0 0 10px rgb(0 0 0 / 10%), inset 0 0 1px rgb(255 255 255 / 60%);
-    background: rgba(255, 255, 255, 0.8);
-	cursor: pointer;
-	user-select: none;
-	appearance: none;
-	touch-action: manipulation;
-    z-index: 1;
+.btn-img {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%), inset 0 0 1px rgb(255 255 255 / 60%);
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+  z-index: 1;
 }
 .btn-img:focus-visible {
-	box-shadow: 0 0 0 2px #666;
+  box-shadow: 0 0 0 2px #666;
 }
 .btn-img:hover {
-	background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9);
 }
 .btn-img:active {
-	transform: scale(0.96);
+  transform: scale(0.96);
 }
 
-
-
 @media screen and (max-width: 720px) {
-    .big-text {
-        font-size: 5rem;
-    }
- }
+  .big-text {
+    font-size: 5rem;
+  }
+}
 
- @media screen and (max-width: 640px) {
-    .big-text {
-        font-size: 5rem;
-        margin: 1rem 1.2rem;
-    }
- }
+@media screen and (max-width: 640px) {
+  .big-text {
+    font-size: 5rem;
+    margin: 1rem 1.2rem;
+  }
+}
 
- @media screen and (max-width: 540px) {
-    .big-text {
-        font-size: 4rem;
-    }
- }
+@media screen and (max-width: 540px) {
+  .big-text {
+    font-size: 4rem;
+  }
+}
 
- @media screen and (max-width: 480px) {
-     h1 {
-        font-size: 3.5rem;
-     }
-    .big-text {
-        font-size: 3rem;
-    }
- }
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  .big-text {
+    font-size: 3rem;
+  }
+}
 
- @media screen and (max-width: 384px) {
-    h1 {
-       font-size: 2.5rem;
-    }
-   .big-text {
-       font-size: 2.2rem;
-   }
+@media screen and (max-width: 384px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .big-text {
+    font-size: 2.2rem;
+  }
 }
 
 @media screen and (max-width: 320px) {
-    h1 {
-       font-size: 2rem;
-    }
-   .big-text {
-       font-size: 1.5rem;
-   }
+  h1 {
+    font-size: 2rem;
+  }
+  .big-text {
+    font-size: 1.5rem;
+  }
 }
