@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,50 +8,59 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Countdown timer</title>
 </head>
-<body>
-    <h1>New Year Eve</h1>
-    <div class="countdown-container">
-        <div class="countdown-el days-c">
-            <p class="big-text" id="days">0</p>
-            <span>days</span>
-        </div>
-        <div class="countdown-el hours-c">
-            <p class="big-text" id="hours">0</p>
-            <span>hours</span>
-        </div>
-        <div class="countdown-el mins-c">
-            <p class="big-text" id="mins">0</p>
-            <span>mins</span>
-        </div>
-        <div class="countdown-el seconds-c">
-            <p class="big-text" id="seconds">0</p>
-            <span>seconds</span>
-        </div>
-    </div>
 
-    <div class="preloder">
-        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<body>
+<h1>New Year Eve</h1>
+<div class="countdown-container">
+    <div class="countdown-el days-c">
+        <p class="big-text" id="days">0</p>
+        <span>days</span>
+    </div>
+    <div class="countdown-el hours-c">
+        <p class="big-text" id="hours">0</p>
+        <span>hours</span>
+    </div>
+    <div class="countdown-el mins-c">
+        <p class="big-text" id="mins">0</p>
+        <span>mins</span>
+    </div>
+    <div class="countdown-el seconds-c">
+        <p class="big-text" id="seconds">0</p>
+        <span>seconds</span>
+    </div>
+</div>
+
+<div class="preloder">
+    <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+
+<div class="control__container">
+
+    <div class="weather">
+        <h2 class="weather__title"></h2>
+        <div class="weather__forecast">
+            <span class="weather__temp"></span>
+            <span class="weather__temp-max"></span>
+            <span class="weather__temp-min"></span>
+        </div>
+        <p class="weather__humidity">Влажность: %</p>
+        <p class="weather__wind">Ветер: км/ч</p>
     </div>
 
     <button class='btn-img' type="button"></button>
+</div>
 
 
-
-    
-
-<div class="weather">
-    <h2 class="weather__title"></h2>
-    <div class="weather__forecast">
-        <span class="weather__temp"></span>
-        <span class="weather__temp-max"></span>
-        <span class="weather__temp-min"></span>
-    </div>
-    <p class="weather__humidity">Влажность: %</p>
-    <p class="weather__wind">Ветер: км/ч</p>
-
-
-
-
-    <script src="./assets/main.js"></script>
+<script src="./assets/main.js"></script>
 </body>
 </html>
