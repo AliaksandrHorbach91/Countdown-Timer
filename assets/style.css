@@ -186,7 +186,7 @@ h1 {
   z-index: 1;
 }
 
-.btn-img--inv {
+.inversion {
   filter: invert(1);
 }
 
@@ -210,6 +210,11 @@ h1 {
 .weather__title {
   padding: 0;
   margin: 0;
+}
+
+.weather__icon {
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 720px) {
