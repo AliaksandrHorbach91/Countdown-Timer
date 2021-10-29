@@ -44,6 +44,7 @@ h1 {
   background: rgba(255, 255, 255, 0.4);
   content: "";
   z-index: -1;
+  transform: translateX(3%);
 }
 
 .countdown-el span {
@@ -58,8 +59,8 @@ h1 {
 }
 
 
-/* ----------   Preloder  ---------- */
-.preloder {
+/* ----------   Preloader  ---------- */
+.preloader {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -165,28 +166,50 @@ h1 {
 
 .btn-img {
   position: relative;
-  width: 100px;
-  height: 40px;
-  display: inline-block;
+  width: 32px;
+  height: 32px;
   box-sizing: border-box;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
   outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.8);
+  background-image: url("./ico/pic.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   cursor: pointer;
   user-select: none;
   appearance: none;
   touch-action: manipulation;
   z-index: 1;
 }
-.btn-img:focus-visible {
-  box-shadow: 0 0 0 2px #666;
+
+.btn-img--inv {
+  filter: invert(1);
 }
+
+
 .btn-img:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-.btn-img:active {
   transform: scale(0.96);
+}
+
+.control__container {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.weather p {
+  margin: 0;
+}
+
+.weather__title {
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (max-width: 720px) {

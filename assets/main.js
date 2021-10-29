@@ -28,7 +28,7 @@ function formatTime(time) {
 }
 
 function closePreloader() {
-    const preloader = document.querySelector('.preloder');
+    const preloader = document.querySelector('.preloader');
     preloader.classList.add('disable')
 }
 
@@ -60,15 +60,23 @@ function changeBg() {
 
     if (hrs >= 6 && hrs < 12) {
         body.style.backgroundImage=`url(${bgObj.morning[countBg]})`;
+        body.style.color='#000';
+        btnChangeBg.classList.add('btn-img--inv')
     }
     if (hrs >= 12 && hrs < 18) {
         body.style.backgroundImage=`url(${bgObj.afternoon[countBg]})`;
+        body.style.color='#000';
+        btnChangeBg.classList.add('btn-img--inv')
     }
     if (hrs >= 18 && hrs < 0) {
         body.style.backgroundImage=`url(${bgObj.evening[countBg]})`;
+        body.style.color='#fff'
+        btnChangeBg.classList.remove('btn-img--inv')
     }
     if (hrs >= 0 && hrs < 6) {
         body.style.backgroundImage=`url(${bgObj.night[countBg]})`;
+        body.style.color='#fff'
+        btnChangeBg.classList.remove('btn-img--inv')
     }
 
     countBg++;
