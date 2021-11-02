@@ -94,8 +94,8 @@ setInterval(countdown, 1000);
 setInterval(changeBg, 600000);
 setTimeout(closePreloader, 3000);
 
-
-fetch('http://api.openweathermap.org/data/2.5/weather?id=3081368&lang=en&appid=c43016557ce6a48d27caa09c7ba1557e')
+const proxy = 'https://cors-anywhere.herokuapp.com/';
+fetch( `${proxy}http://api.openweathermap.org/data/2.5/weather?id=3081368&lang=en&appid=c43016557ce6a48d27caa09c7ba1557e`)
     .then(function (resp) {
         return resp.json()
     })
